@@ -1,0 +1,212 @@
+[
+  {
+    "id": "tc_01_weight_contradiction",
+    "description": "Clear contradiction: half of reviews call it lightweight, half call it heavy",
+    "reviews": [
+      "This baby carrier is incredibly lightweight and I barely feel any weight on my shoulders at all.",
+      "This carrier is way too heavy and my back was aching after just thirty minutes of carrying my baby.",
+      "I absolutely love how light this carrier feels when I take long walks with my little one.",
+      "The weight of this thing is simply unbearable and far heavier than the product description states."
+    ],
+    "expected": {
+      "contradiction": true,
+      "issue": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "tc_02_positive_consensus",
+    "description": "Clear positive consensus: five reviewers all praise build quality",
+    "reviews": [
+      "This stroller is absolutely fantastic and the build quality is outstanding compared to anything I have tried before.",
+      "Best purchase I have ever made for my baby, the quality is top notch and very durable indeed.",
+      "Incredibly well made product, the stitching and materials are premium and the craftsmanship is excellent throughout.",
+      "I am so impressed with the quality of this stroller and it has held up perfectly after six months of use.",
+      "The quality far exceeded my expectations and this is clearly built to last for many years to come."
+    ],
+    "expected": {
+      "contradiction": false,
+      "issue": null,
+      "confidence": "High"
+    }
+  },
+  {
+    "id": "tc_03_negative_consensus",
+    "description": "Clear negative consensus: five reviewers all report poor quality",
+    "reviews": [
+      "Terrible quality product, the wheels fell apart after just two weeks of regular everyday use with my baby.",
+      "Do not buy this item, the quality is shockingly poor and it started breaking within just a few days.",
+      "Extremely disappointed with the build quality, the plastic pieces crack easily and the stitching is already coming apart.",
+      "The worst baby product I have ever purchased, the quality is completely unacceptable and it broke almost immediately.",
+      "Such poor quality for this high price, everything feels cheap and flimsy and it fell apart very quickly."
+    ],
+    "expected": {
+      "contradiction": false,
+      "issue": null,
+      "confidence": "High"
+    }
+  },
+  {
+    "id": "tc_04_sparse_data",
+    "description": "Sparse data: only two reviews with minimal overlap in topics",
+    "reviews": [
+      "This baby carrier seems comfortable enough for short walks around the neighbourhood and the park.",
+      "It is a decent enough product but I think there might be better options available at this price point."
+    ],
+    "expected": {
+      "contradiction": false,
+      "issue": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "tc_05_vague_reviews",
+    "description": "All vague reviews with no specific claims — low signal for the pipeline",
+    "reviews": [
+      "This product is really good overall and I think most parents would enjoy having it around.",
+      "Very nice product and I would definitely recommend it to anyone who might be looking for one.",
+      "Good item overall and it seems to work just fine for the price that was paid.",
+      "This is a nice thing to have and I feel like it works well enough for our needs."
+    ],
+    "expected": {
+      "contradiction": false,
+      "issue": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "tc_06_neutral_reviews",
+    "description": "All neutral balanced reviews with no strong positive or negative sentiment",
+    "reviews": [
+      "The stroller has some good features but also a few drawbacks, making it an average product overall.",
+      "Neither great nor terrible, it does exactly what it is supposed to do but nothing more than that.",
+      "Some things I like about it and some things I do not, overall it balances out to be pretty average.",
+      "Adequate for the price, has its pros and cons, I would call it a middle of the road option."
+    ],
+    "expected": {
+      "contradiction": false,
+      "issue": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "tc_07_shipping_noise",
+    "description": "Off-topic delivery complaints only — no product quality claims whatsoever",
+    "reviews": [
+      "The delivery took three weeks and the package arrived completely crushed and badly damaged on my doorstep.",
+      "Shipping was absolutely terrible, the item came ten days late with no tracking updates provided at all.",
+      "Very disappointed with the delivery experience, the box was visibly damaged and the courier was completely unhelpful.",
+      "Package arrived two weeks late and the shipping carrier left it outside in the rain without any notification."
+    ],
+    "expected": {
+      "contradiction": false,
+      "issue": "shipping",
+      "confidence": null
+    }
+  },
+  {
+    "id": "tc_08_hallucination_trap",
+    "description": "Durability never mentioned in reviews — any durability claim in output is hallucinated",
+    "reviews": [
+      "The color options are beautiful and the overall design looks very stylish and modern on the baby.",
+      "Really love the aesthetic of this product, the design choices are thoughtful and visually very appealing indeed.",
+      "The look and feel of this stroller is premium and the color choices are elegant and attractive.",
+      "Visually this is a stunning product and it always gets compliments whenever I take it out in public."
+    ],
+    "expected": {
+      "contradiction": false,
+      "issue": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "tc_09_mixed_signals",
+    "description": "Mixed feedback across different aspects — positive on some, negative on others, no direct contradiction",
+    "reviews": [
+      "The quality of the materials is excellent and the overall build feels premium and very solid throughout.",
+      "A bit pricey for what you get but the design is attractive and it looks quite nice overall.",
+      "Easy to set up and fold away but the storage basket underneath is too small for all of our gear.",
+      "The seat is very comfortable for my baby but the canopy does not provide enough coverage from direct sun.",
+      "Overall a decent stroller with some great features and a few areas that could definitely be improved upon."
+    ],
+    "expected": {
+      "contradiction": false,
+      "issue": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "tc_10_single_review",
+    "description": "Edge case: only one review provided to the pipeline",
+    "reviews": [
+      "This baby carrier works reasonably well for short walks but I have not tested it for any extended periods yet."
+    ],
+    "expected": {
+      "contradiction": false,
+      "issue": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "tc_11_safety_contradiction",
+    "description": "Direct safety contradiction: some say safe, others report safety hazards",
+    "reviews": [
+      "I feel completely safe using this carrier with my newborn, the buckles are secure and the head support is excellent.",
+      "This carrier is genuinely dangerous, my baby almost slipped out twice and the buckle released unexpectedly while walking.",
+      "Very confident in the safety of this product, it meets all standards and my baby is always secure.",
+      "Serious safety concerns here, the harness is poorly designed and my baby was not properly supported at all."
+    ],
+    "expected": {
+      "contradiction": true,
+      "issue": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "tc_12_value_contradiction",
+    "description": "Value contradiction: half say great deal, half say overpriced",
+    "reviews": [
+      "Incredible value for the money, I cannot believe how much you get at this very reasonable price point.",
+      "Completely overpriced for what you get, there are much better strollers available for half the cost.",
+      "Best value baby product on the market, the price is very fair given the quality and features offered.",
+      "Way too expensive and not worth it at all, I regret spending this much money on such a basic stroller."
+    ],
+    "expected": {
+      "contradiction": true,
+      "issue": null,
+      "confidence": null
+    }
+  },
+  {
+    "id": "tc_13_comfort_consensus",
+    "description": "Clear comfort consensus: all reviews agree the carrier is ergonomic and comfortable",
+    "reviews": [
+      "This carrier is incredibly comfortable and my shoulders never hurt even after hours of use with my baby.",
+      "The ergonomic design makes this so easy to wear all day long without any discomfort whatsoever.",
+      "By far the most comfortable baby carrier I have ever tried, my back and shoulders feel completely fine.",
+      "So easy and comfortable to use, the padded straps make extended wear completely painless for me.",
+      "Wearing this all day is effortless and comfortable, my baby loves it and so does my back."
+    ],
+    "expected": {
+      "contradiction": false,
+      "issue": "comfort",
+      "confidence": null
+    }
+  },
+  {
+    "id": "tc_14_weight_consensus",
+    "description": "Clear weight consensus: all reviews agree the stroller is impressively lightweight",
+    "reviews": [
+      "This stroller is shockingly lightweight and I can lift it with one hand without any effort at all.",
+      "So light compared to our old stroller, carrying it up stairs is no problem at all anymore.",
+      "The weight of this stroller is its best feature, it is feather light and easy to manoeuvre everywhere.",
+      "Cannot believe how light this is, folding and lifting it into the car boot is effortless every time.",
+      "Incredibly light stroller that is easy to carry and push, the low weight makes everything so much simpler."
+    ],
+    "expected": {
+      "contradiction": false,
+      "issue": "weight",
+      "confidence": null
+    }
+  }
+]
