@@ -42,6 +42,7 @@ def generate_verdict(
     High-confidence, high-evidence items appear first.
     """
     items: List[VerdictItem] = []
+    explanations: List[str] = []
     for s in summaries:
         conf = compute_confidence(s.claims, s.agreement_ratio, s.has_contradiction)
         items.append(
@@ -54,13 +55,22 @@ def generate_verdict(
                 polarity=_aggregate_polarity(s.claims),
             )
         )
+        if s.has_contradiction and s.explanation:
+            explanations.append(s.explanation)
+
+    # Drop singleton clusters (evidence_count=1, no contradiction) — they are
+    # noise that skews the overall confidence distribution toward "Low".
+    items = [v for v in items if v.evidence_count >= 2 or v.contradiction_flag]
 
     _rank = {"High": 0, "Medium": 1, "Low": 2}
     items.sort(key=lambda x: (_rank[x.confidence], -x.evidence_count))
+
+    explanation = " ".join(explanations) if explanations else "No contradictions detected among reviewers."
 
     return FinalVerdict(
         product_name=product_name,
         total_reviews=total_reviews,
         verdict_items=items,
         overall_sentiment=_overall_sentiment(items),
+        explanation=explanation,
     )

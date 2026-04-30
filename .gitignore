@@ -1,0 +1,51 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+*.egg
+
+# IDE settings
+.vscode/
+.idea/
+*.suo
+*.user
+
+# Generated output
+mumz_verdict_ai/output/*
+!mumz_verdict_ai/output/.gitkeep
+
+# HuggingFace / ML model cache
+*.bin
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+models/
+model_cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/

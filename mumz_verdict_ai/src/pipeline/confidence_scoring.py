@@ -46,8 +46,6 @@ def compute_confidence(
 
     if contradiction:
         level: Literal["High", "Medium", "Low"] = "Low"
-    elif evidence_count == 0 or agreement_ratio == 0.0:
-        level = "Low"
     elif evidence_count >= 5 and agreement_ratio >= 0.75:
         level = "High"
     elif evidence_count >= 2:

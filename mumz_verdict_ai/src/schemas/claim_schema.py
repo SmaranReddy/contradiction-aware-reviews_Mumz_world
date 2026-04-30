@@ -17,6 +17,7 @@ class ClusterSummary(BaseModel):
     claims: List[Claim]
     has_contradiction: bool = False
     agreement_ratio: float = 0.0
+    explanation: str = ""
 
 
 class VerdictItem(BaseModel):
@@ -34,3 +35,4 @@ class FinalVerdict(BaseModel):
     verdict_items: List[VerdictItem]
     overall_sentiment: Literal["Positive", "Mixed", "Negative"]
     hallucination_flags: List[str] = Field(default_factory=list)
+    explanation: str = ""

@@ -5,6 +5,9 @@ Usage:
     python evals/run_evals.py
 """
 
+from dotenv import load_dotenv
+load_dotenv()
+
 import json
 import sys
 from pathlib import Path

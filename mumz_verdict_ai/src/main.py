@@ -6,11 +6,16 @@ Usage:
     python src/main.py --reviews data/reviews_sample.json --output output/verdict.json --product "Baby Stroller XL"
 """
 
+from dotenv import load_dotenv
+load_dotenv()
+
 import argparse
 import json
 import os
 import sys
 from pathlib import Path
+
+print("GEMINI KEY LOADED:", bool(os.getenv("GEMINI_API_KEY")))
 
 # Make src/ importable as the root package path
 sys.path.insert(0, str(Path(__file__).parent))
