@@ -1,0 +1,89 @@
+{
+  "product_name": "Baby Stroller XL",
+  "total_reviews": 20,
+  "verdict_items": [
+    {
+      "claim": "The stroller folds in seconds",
+      "aspect": "ease_of_use",
+      "evidence_count": 2,
+      "confidence": "Medium",
+      "contradiction_flag": false,
+      "polarity": 1
+    },
+    {
+      "claim": "The storage basket is a great value for money.",
+      "aspect": "value",
+      "evidence_count": 2,
+      "confidence": "Medium",
+      "contradiction_flag": false,
+      "polarity": 1
+    },
+    {
+      "claim": "Buying a separate sun cover was an extra expense",
+      "aspect": "value",
+      "evidence_count": 2,
+      "confidence": "Medium",
+      "contradiction_flag": false,
+      "polarity": -1
+    },
+    {
+      "claim": "The seat was uncomfortable after 30 minutes",
+      "aspect": "quality",
+      "evidence_count": 2,
+      "confidence": "Medium",
+      "contradiction_flag": false,
+      "polarity": -1
+    },
+    {
+      "claim": "The steering is responsive",
+      "aspect": "quality",
+      "evidence_count": 2,
+      "confidence": "Medium",
+      "contradiction_flag": false,
+      "polarity": 1
+    },
+    {
+      "claim": "The recline mechanism has multiple positions",
+      "aspect": "quality",
+      "evidence_count": 2,
+      "confidence": "Medium",
+      "contradiction_flag": false,
+      "polarity": 1
+    },
+    {
+      "claim": "Comparable strollers do not offer significantly better features",
+      "aspect": "quality",
+      "evidence_count": 2,
+      "confidence": "Medium",
+      "contradiction_flag": false,
+      "polarity": 1
+    },
+    {
+      "claim": "The brake holds firmly even on slopes",
+      "aspect": "ease_of_use",
+      "evidence_count": 2,
+      "confidence": "Medium",
+      "contradiction_flag": false,
+      "polarity": 1
+    },
+    {
+      "claim": "The canopy keeps my baby cool and shaded throughout our walks",
+      "aspect": "quality",
+      "evidence_count": 4,
+      "confidence": "Low",
+      "contradiction_flag": true,
+      "polarity": 1
+    },
+    {
+      "claim": "The stroller broke after just 3 months",
+      "aspect": "quality",
+      "evidence_count": 3,
+      "confidence": "Low",
+      "contradiction_flag": true,
+      "polarity": 1
+    }
+  ],
+  "overall_sentiment": "Positive",
+  "hallucination_flags": [],
+  "explanation": "Reviewers disagree on durability, likely due to different expectations, usage contexts, or comparison standards. Most reviewers report quality positively, while a smaller group reports negative experiences, suggesting varied user expectations or conditions."
+}

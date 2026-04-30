@@ -15,7 +15,6 @@ import os
 import sys
 from pathlib import Path
 
-print("GEMINI KEY LOADED:", bool(os.getenv("GEMINI_API_KEY")))
 
 # Make src/ importable as the root package path
 sys.path.insert(0, str(Path(__file__).parent))
